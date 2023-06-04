@@ -18,13 +18,7 @@ function Auth(props) {
     setMounted(true);
   }, [user]);
 
-  return mounted ? (
-    <section>
-      {children} {JSON.stringify(user, undefined, 2)}
-    </section>
-  ) : (
-    <section />
-  );
+  return mounted ? <section>{children}</section> : <section />;
 }
 
 export default Auth;

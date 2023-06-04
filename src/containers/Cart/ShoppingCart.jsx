@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { Container, Navbar, Button, NavDropdown, Nav } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 import CartModal from './CartModal';
 import auth from '../../utils/auth';
 
 function ShoppingCart() {
   const { carts } = useSelector((state) => state.cart);
+  const navigate = useNavigate();
 
   const [showCart, setShowCart] = useState();
 
@@ -37,7 +39,9 @@ function ShoppingCart() {
                 title="Account"
                 id="basic-nav-dropdown"
               >
-                <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>
+                <NavDropdown.Item onClick={() => navigate('/profile')}>
+                  Profile
+                </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item onClick={() => handleLogout()}>
                   Logout
