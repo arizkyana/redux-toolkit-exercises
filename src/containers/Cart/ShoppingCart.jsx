@@ -7,6 +7,7 @@ import CartModal from './CartModal';
 import auth from '../../utils/auth';
 
 function ShoppingCart() {
+  const { user } = useSelector((state) => state.login);
   const { carts } = useSelector((state) => state.cart);
   const navigate = useNavigate();
 
@@ -33,21 +34,36 @@ function ShoppingCart() {
                 Cart: {carts.length}
               </Button>
             </Nav.Link>
-            <Nav.Link>
-              <NavDropdown
-                className="justify-content-end ml-3 d-block"
-                title="Account"
-                id="basic-nav-dropdown"
-              >
-                <NavDropdown.Item onClick={() => navigate('/profile')}>
-                  Profile
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item onClick={() => handleLogout()}>
-                  Logout
-                </NavDropdown.Item>
-              </NavDropdown>
-            </Nav.Link>
+            {user && user.email ? (
+              <Nav.Link>
+                <NavDropdown
+                  className="justify-content-end ml-3 d-block"
+                  title="Account"
+                  id="basic-nav-dropdown"
+                >
+                  <NavDropdown.Item onClick={() => navigate('/profile')}>
+                    Profile
+                  </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item onClick={() => handleLogout()}>
+                    Logout
+                  </NavDropdown.Item>
+                </NavDropdown>
+              </Nav.Link>
+            ) : (
+              <>
+                <Nav.Link href="/login">
+                  <Button type="button" variant="success">
+                    Login
+                  </Button>
+                </Nav.Link>
+                <Nav.Link>
+                  <Button type="button" variant="outline-success">
+                    Sign Up
+                  </Button>
+                </Nav.Link>
+              </>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>

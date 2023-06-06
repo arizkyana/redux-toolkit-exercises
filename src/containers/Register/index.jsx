@@ -3,15 +3,15 @@ import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import NoAuth from '../../components/NoAuth';
 
-import useLogin from './hooks/useLogin';
+import useRegister from './hooks/useRegister';
 
-function Login() {
-  const { doLogin, login } = useLogin();
+function Register() {
+  const { doRegister, register } = useRegister();
   const [formValues, setFormValues] = useState();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await doLogin(formValues);
+    await doRegister(formValues);
   };
 
   return (
@@ -22,7 +22,7 @@ function Login() {
       >
         <Form onSubmit={handleSubmit} style={{ width: '30%' }}>
           <div className="mb-3">
-            <h3>Login</h3>
+            <h3>Register</h3>
           </div>
           <div className="mb-3">
             <Form.Label htmlFor="email">Email</Form.Label>
@@ -57,18 +57,18 @@ function Login() {
               variant="primary"
               className="d-block mb-2"
               style={{ width: '100%' }}
-              disabled={login.loading}
+              disabled={register.loading}
             >
-              {login.loading ? 'Loading...' : 'Go to My Account'}
+              {register.loading ? 'Loading...' : 'Submit'}
             </Button>
-            <Link to="/register">
+            <Link to="/login">
               <Button
                 type="button"
                 variant="link"
                 className="d-block"
                 style={{ width: '100%' }}
               >
-                Create an Account
+                Already have an account?
               </Button>
             </Link>
           </div>
@@ -78,4 +78,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Register;
