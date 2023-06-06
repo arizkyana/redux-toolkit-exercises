@@ -57,7 +57,7 @@ function ShoppingCart() {
                     Login
                   </Button>
                 </Nav.Link>
-                <Nav.Link>
+                <Nav.Link href="/register">
                   <Button type="button" variant="outline-success">
                     Sign Up
                   </Button>
