@@ -5,6 +5,7 @@ import counterReducer from './counter/slice';
 import cartReducer from './cart/slice';
 import loginReducer from './login/slice';
 import registerReducer from './register/slice';
+import ticketReducer from './ticket/slice';
 
 const rootReducer = combineReducers({
   todo: todoReducer,
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
   cart: cartReducer,
   login: loginReducer,
   register: registerReducer,
+  ticket: ticketReducer,
 });
 
 export default configureStore({
