@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-const Pembayaran = () => {
+function Pembayaran() {
   return <div>pembayaran</div>;
-};
+}
 
 export default Pembayaran;
