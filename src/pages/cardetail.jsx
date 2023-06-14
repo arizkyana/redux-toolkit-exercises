@@ -1,7 +1,8 @@
-import React from "react";
+import React from 'react';
+import CarDetail from '../containers/CarDetail';
 
-function CarDetail() {
-  return <h1>Car Detail Page</h1>;
+function CarDetailPage() {
+  return <CarDetail />;
 }
 
-export default CarDetail;
+export default CarDetailPage;
