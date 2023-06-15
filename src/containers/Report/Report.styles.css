@@ -1,0 +1,25 @@
+.shell .sidemenu {
+  position: fixed;
+  width: 5rem;
+  bottom: 0;
+  top: 0;
+  background: #0d28a6;
+  z-index: 99999;
+}
+
+.shell .content {
+  position: relative;
+  /* padding-left: 20rem; */
+  background-color: #e5e5e5;
+
+  min-height: 100vh;
+}
+
+.inner-sidemenu {
+  position: absolute;
+  background-color: red;
+  top: 0;
+  bottom: 0;
+  width: 20rem;
+  padding-left: 5rem;
+}
