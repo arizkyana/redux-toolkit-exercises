@@ -7,6 +7,7 @@ import ProfilePage from './pages/profile';
 import RegisterPage from './pages/register';
 import ReportPage from './pages/report';
 import CarDetailPage from './pages/cardetail';
+import UploadPage from './pages/upload';
 
 function App() {
   const router = createBrowserRouter([
@@ -27,12 +28,16 @@ function App() {
       element: <ProfilePage />,
     },
     {
-      path: '/report',
-      element: <ReportPage />,
+      path: '/upload',
+      element: <UploadPage />,
     },
     {
       path: '/car/:id',
       element: <CarDetailPage />,
+    },
+    {
+      path: '/report',
+      element: <ReportPage />,
     },
   ]);
   return <RouterProvider router={router} />;

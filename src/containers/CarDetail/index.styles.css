@@ -22,5 +22,5 @@
 }
 
 .label_file-uploader input[type='file'] {
-  display: none;
+  /* display: none; */
 }
